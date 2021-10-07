@@ -15,7 +15,7 @@ line_thickness = 3
 # open pygame window
 def open_window():
     screen = pygame.display.set_mode((window_x,window_y))
-    pygame.display.set_caption('Laura\'s Tic-Tac-Toe')
+    pygame.display.set_caption('Tic-Tac-Toe')
     return screen
 
 # create game board
@@ -147,6 +147,17 @@ def choose_ai():
             return 4
         else:
             sys.stdout.write("Please respond with '1', '2', '3', or '4'.\n")
+
+def choose_player():
+    while True:
+        sys.stdout.write("Choose player. [X/O]\n1. X\n2. O\n> ")
+        answer = input().lower()
+        if answer == "1":
+            return "X"
+        elif answer == "2":
+            return "O"
+        else:
+            sys.stdout.write("Please respond with '1' or '2'\n")
 
 # ask user if they'd like to play again
 def play_again():
