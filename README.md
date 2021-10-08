@@ -66,5 +66,5 @@ it is recommended to have a more or less powerful computer
 
 #Reference
 
-*Class slides
-*https://github.com/laurakoco/tic-tac-toe-ai
+* Class slides
+* https://github.com/laurakoco/tic-tac-toe-ai
