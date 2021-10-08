@@ -63,3 +63,8 @@ we have observed that by varying the dimensions of the board, some algorithms ta
 # Recommendations
 
 it is recommended to have a more or less powerful computer 
+
+#Reference
+
+*Class slides
+*https://github.com/laurakoco/tic-tac-toe-ai
