@@ -35,12 +35,15 @@ $ python3 menu.py
 A series of experiments were performed to test the functionality of the algorithms and that everything works in the best possible way, in these experiments the time it took the ia to decide its next move was verified, and also the spanning tree was measured.
 
 ![1](https://user-images.githubusercontent.com/58644744/136495655-2f7cfe3d-c761-48ec-b7b9-c3df6692e785.png)
+
 This first experiment is about playing in easy mode and letting the IA to win.
 
 ![2](https://user-images.githubusercontent.com/58644744/136495668-f1691259-204f-4118-bf2b-f45d0e22221f.png)
+
 This second experiment is using Cutoff and playing as the "O" so the IA can play first.
 
 ![3](https://user-images.githubusercontent.com/58644744/136495678-3d74b735-887b-4525-8199-0aa5e42d072a.png)
+
 This experiment is playing with minmax and the result is a draw.
 
 ## How many states does the game tree have for a board of dimensions 3x3, 4x4 and 5x5?
