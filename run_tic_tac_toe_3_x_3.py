@@ -39,7 +39,7 @@ while True:
                  
             # if mouse click event
             if event.type == pygame.MOUSEBUTTONDOWN: 
-                
+                    
                 # human player goes
                 player = "X"
 
@@ -65,49 +65,44 @@ while True:
                             pygame.event.get()
                             terminal_state = play_again()
                         
-                    # ai player goes
-                    #player = "O"
-                    # if there are empty regions remaining
-                    if len(empty_regions) != 0:
+                # ai player goes
+                # start = time.clock()
+                # randomly place ai
+                if ai == 1:
+                    ai_region = random_ai(empty_regions) # call ai() to find best position
 
-                        # start = time.clock()
+                # minimax to place ai
+                if ai == 2:
+                    my_state = state[:] # create copy of state list for scope
+                    best = minimax(my_state, ai_mark)
+                    ai_region = int(best[0])
 
-                        # randomly place ai
-                        if ai == 1:
-                            ai_region = random_ai(empty_regions) # call ai() to find best position
+                # alphabeta to place ai
+                if ai == 3:
+                    my_state = state[:] # create copy of state list for scope
+                    best = alphabeta(my_state, -float("inf"), float("inf"), ai_mark)
+                    ai_region = int(best[0])
 
-                        # minimax to place ai
-                        if ai == 2:
-                            my_state = state[:] # create copy of state list for scope
-                            best = minimax(my_state, ai_mark)
-                            ai_region = int(best[0])
-
-                        # alphabeta to place ai
-                        if ai == 3:
-                            my_state = state[:] # create copy of state list for scope
-                            best = alphabeta(my_state, -float("inf"), float("inf"), ai_mark)
-                            ai_region = int(best[0])
-
-                        if ai == 4:
-                            my_state = state[:]  # create copy of state list for scope
-                            best = alphabeta_cutoff(my_state, -float("inf"), float("inf"), 0, ai_mark)
-                            ai_region = int(best[0])
+                if ai == 4:
+                    my_state = state[:]  # create copy of state list for scope
+                    best = alphabeta_cutoff(my_state, -float("inf"), float("inf"), 0, ai_mark)
+                    ai_region = int(best[0])
 
 
-                        place_on_grid(window, ai_region, ai_mark)  # place ai marker on window
-                        state[ai_region] = ai_mark # update board state
+                place_on_grid(window, ai_region, ai_mark)  # place ai marker on window
+                state[ai_region] = ai_mark # update board state
 
-                        # stop = time.clock()
-                        # elapsed = stop - start
-                        # print("AI time: " + str(elapsed))
+                # stop = time.clock()
+                # elapsed = stop - start
+                # print("AI time: " + str(elapsed))
 
-                        game_over = terminal_test(state,ai_mark) # check for terminal state
-                        turn = True
+                game_over = terminal_test(state,ai_mark) # check for terminal state
+                turn = True
 
-                        # terminal state is found
-                        if game_over:
-                            pygame.event.get()
-                            terminal_state = play_again()
+                # terminal state is found
+                if game_over:
+                    pygame.event.get()
+                    terminal_state = play_again()
 
     # repeat game robustness - handle Yes No Y N ... or pop up?
       
