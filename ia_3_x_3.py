@@ -1,6 +1,8 @@
 import random
 from tic_tac_toe_3_x_3 import *
 
+
+
 # return ia region randomly
 def random_ai(empty_spots):
     if len(empty_spots) > 1:
@@ -11,7 +13,6 @@ def random_ai(empty_spots):
 
 # return best ai region via minimax search
 def minimax(state, player):
-
     if player == "O":
         best = [-1, -float("inf")]
     else:
@@ -75,7 +76,6 @@ def alphabeta(state, alpha, beta, player):
 
 # return best ia position via full alpha-beta search with cutoff
 def alphabeta_cutoff(state, alpha, beta, depth, player):
-
     if player == "O":
         best = [-1, -float("inf")]
     else:

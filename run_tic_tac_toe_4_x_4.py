@@ -5,7 +5,7 @@ import pygame
 import sys
 from tic_tac_toe_4_x_4 import *
 from ai_4_x_4 import *
-# import time
+import time
 
 pygame.init()
 
@@ -61,7 +61,7 @@ def main4():
                                 
                     # ai player goes
 
-                    # start = time.clock()
+                    start = time.process_time()
                     # randomly place ai
                     if ai == 1:
                         ai_region = random_ai(empty_regions) # call ai() to find best position
@@ -87,9 +87,9 @@ def main4():
                     place_on_grid(window, ai_region, ai_mark)  # place ai marker on window
                     state[ai_region] = ai_mark # update board state
 
-                    # stop = time.clock()
-                    # elapsed = stop - start
-                    # print("AI time: " + str(elapsed))
+                    stop = time.process_time()
+                    elapsed = stop - start
+                    print("AI time: " + str(elapsed))
 
                     game_over = terminal_test(state,ai_mark) # check for terminal state
                     turn = True

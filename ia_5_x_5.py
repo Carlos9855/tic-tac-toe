@@ -78,7 +78,6 @@ def alphabeta(state, alpha, beta, player):
 # return best ia
 #  position via full alpha-beta search with cutoff
 def alphabeta_cutoff(state, alpha, beta, depth, player):
-
     if player == "O":
         best = [-1, -float("inf")]
     else:

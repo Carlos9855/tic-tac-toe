@@ -7,6 +7,7 @@ from run_tic_tac_toe_5_x_5 import main5
 if (__name__ == '__main__'):
     
     option = 0
+    number_of_states = 0
 
     while(option != 4):
         print("Choose the difficult: \n")
@@ -18,7 +19,7 @@ if (__name__ == '__main__'):
         if option == "1":
             print("-- Easy mode --")
             main()
-            #system.pause()
+            count_states(number_of_states)
             os.system("pause")
         if option == "2":
             print("-- Medium mode --")

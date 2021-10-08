@@ -1,6 +1,7 @@
 import pygame
 import sys
 
+
 # color definitions
 red = (255,0,0)
 blue = (0,0,255)
@@ -21,6 +22,7 @@ def open_window():
 # create game board
 def create_board(screen):
     screen.fill(white)
+    pygame.draw.rect(screen, black, (1, 1, window_x, window_y), line_thickness*3)
     pygame.draw.rect(screen, black, (0, 0, window_x, window_y), line_thickness*3)
     pygame.draw.rect(screen, black, (0, 0, window_x, window_y/3), line_thickness)
     pygame.draw.rect(screen, black, (0, 0, window_x, window_y*2/3), line_thickness)
@@ -107,6 +109,7 @@ def get_opponent(player):
         return "O"
     else:
         return "X"
+
 
 # find empty regions
 def find_empty_regions(state):

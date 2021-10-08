@@ -5,7 +5,7 @@ import pygame
 import sys
 from tic_tac_toe_3_x_3 import *
 from ia_3_x_3 import *
-# import time
+import time
 
 def main():
     pygame.init()
@@ -40,13 +40,11 @@ def main():
                     
                 # if mouse click event
                 if event.type == pygame.MOUSEBUTTONDOWN: 
-                        
                     # human player goes
                     #player = "X"
                     if( turn == True):
 
                         pos = pygame.mouse.get_pos() # get mouse click position
-                        print(pos)
                         region = map_to_grid(pos)  # map mouse click position to board region 0 - 8
                         empty_regions = find_empty_regions(state) # find empty regions
                                         
@@ -68,7 +66,7 @@ def main():
                                     terminal_state = play_again()
                             
                     # ai player goes
-                    # start = time.clock()
+                    start = time.process_time()
                     # randomly place ai
                     if ai == 1:
                         ai_region = random_ai(empty_regions) # call ai() to find best position
@@ -94,9 +92,9 @@ def main():
                     place_on_grid(window, ai_region, ai_mark)  # place ai marker on window
                     state[ai_region] = ai_mark # update board state
 
-                    # stop = time.clock()
-                    # elapsed = stop - start
-                    # print("AI time: " + str(elapsed))
+                    stop = time.process_time()
+                    elapsed = stop - start
+                    print("AI time: " + str(elapsed))
 
                     game_over = terminal_test(state,ai_mark) # check for terminal state
                     turn = True

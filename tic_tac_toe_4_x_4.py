@@ -25,6 +25,7 @@ def open_window():
 # create game board
 def create_board(screen):
     screen.fill(white)
+    myfont = pygame.font.SysFont("monospace", 15)
     pygame.draw.rect(screen, black, (0, 0, window_x, window_y), line_thickness*4)
     pygame.draw.rect(screen, black, (0, 0, window_x, window_y/4), line_thickness)
     pygame.draw.rect(screen, black, (0, 0, window_x, window_y*2/4), line_thickness)
@@ -32,7 +33,6 @@ def create_board(screen):
     pygame.draw.rect(screen, black, (0, 0, window_x/4, window_y), line_thickness)
     pygame.draw.rect(screen, black, (0, 0, window_x*2/4, window_y), line_thickness)
     pygame.draw.rect(screen, black, (0, 0, window_x*3/4,window_y), line_thickness)
-    
     pygame.display.update()
 
 # map mouse click to grid
