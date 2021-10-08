@@ -1,10 +1,7 @@
-
-# run_tic_tac_toe.py
-
 import pygame
 import sys
-from tic_tac_toe_3_x_3 import *
-from ia_3_x_3 import *
+from tic_tac_toe_5_x_5 import *
+from ia_5_x_5 import *
 # import time
 
 pygame.init()
@@ -15,7 +12,7 @@ while True:
     
     window = open_window() # open window
     create_board(window) # create board
-    state = ["0", "1", "2", "3", "4", "5", "6", "7", "8"] # initialize board state
+    state = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"] # initialize board state
     terminal_state = False # initialize terminal state
 
     ai = choose_ai() # choose ai: random, minimax, full alpha-beta
@@ -36,7 +33,6 @@ while True:
                 player = "X"
 
                 pos = pygame.mouse.get_pos() # get mouse click position
-                print(pos)
                 region = map_to_grid(pos)  # map mouse click position to board region 0 - 8
                 empty_regions = find_empty_regions(state) # find empty regions
                                 
